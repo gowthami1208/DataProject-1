@@ -1,3 +1,4 @@
+#Stacked chart of matches played by team by season
 import csv
 
 from matplotlib import pyplot as plt
