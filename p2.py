@@ -1,4 +1,4 @@
-#Top batsman for Royal Challengers Bangalore
+#Top 10 batsman for Royal Challengers Bangalore
 import csv
 
 from matplotlib import pyplot as plt
@@ -16,8 +16,15 @@ with open("/home/gowthami/project1/deliveries.csv", "r") as csv_file:
                 data[b] += s
             else:
                 data[b] = s
-players = list(data.keys())
-scores = list(data.values())
+d = sorted(data.values(), reverse=True)
+k = {}
+for i in d[:10]:
+    for j in data:
+        if data[j] == i:
+            k[j] = i
+            break
+players = list(k.keys())
+scores = list(k.values())
 print(players)
 font1 = {"family": "serif", "color": "darkred", "size": 20}
 font2 = {"family": "serif", "color": "darkred", "size": 15}
